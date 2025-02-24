@@ -9,12 +9,13 @@ namespace wioenena.Craft.NET.Types.Packet.Client;
 /// <param name="serverAddress">The address of the server.</param>
 /// <param name="serverPort">The port of the server.</param>
 /// <param name="nextState">The next state the client wants to switch to.</param>
-public class HandshakePacket(int protocolVersion, string serverAddress, ushort serverPort, State nextState) : BasePacket(0x00), IDeserializablePacket<HandshakePacket> {
-    public int ProtocolVersion { get; } = protocolVersion;
-    public string ServerAddress { get; } = serverAddress;
-    public ushort ServerPort { get; } = serverPort;
-    public State NextState { get; } = nextState;
+public sealed class HandshakePacket(int protocolVersion, string serverAddress, ushort serverPort, State nextState) : IDeserializablePacket<HandshakePacket> {
+    public const int Id = 0x00;
+    public int ProtocolVersion { get; set; } = protocolVersion;
+    public string ServerAddress { get; set; } = serverAddress;
+    public ushort ServerPort { get; set; } = serverPort;
+    public State NextState { get; set; } = nextState;
 
-    public static HandshakePacket FromReader(CraftReader reader) =>
-        new(reader.ReadVarInt(), reader.ReadVarString(), reader.ReadUShort(), (State)reader.ReadVarInt());
+    public static HandshakePacket FromReader(CraftReader reader)
+        => new(reader.ReadVarInt(), reader.ReadVarString(), reader.ReadUShort(), (State)reader.ReadVarInt());
 }
