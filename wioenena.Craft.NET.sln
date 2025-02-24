@@ -13,6 +13,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wioenena.Craft.NET.Test", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wioenena.Craft.NET.Types", "src\wioenena.Craft.NET.Types\wioenena.Craft.NET.Types.csproj", "{41FD3779-64CA-4314-8A23-EEB3AA606C86}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{089100B1-113F-4E66-888A-E83F3999EAFD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".vscode", ".vscode", "{6283A328-F67D-8DB2-B8B2-0EB990AEEC12}"
+	ProjectSection(SolutionItems) = preProject
+		.vscode\settings.json = .vscode\settings.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,5 +93,6 @@ Global
 		{858D18FD-1B11-416E-B621-26A79FD1CED1} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{272152D1-5FFC-4DD2-8E14-22225EA596D8} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{41FD3779-64CA-4314-8A23-EEB3AA606C86} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{6283A328-F67D-8DB2-B8B2-0EB990AEEC12} = {089100B1-113F-4E66-888A-E83F3999EAFD}
 	EndGlobalSection
 EndGlobal
