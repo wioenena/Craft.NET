@@ -106,6 +106,22 @@ public class CraftReader(NetworkStream stream) : IDisposable {
         return Encoding.UTF8.GetString(buffer);
     }
 
+
+    /// <summary>
+    /// Reads an unsigned 16-bit short (ushort) from the stream.
+    /// </summary>
+    /// <remarks>
+    /// This method reads two bytes from the stream, interprets them as a 16-bit
+    /// unsigned integer (ushort), and returns the resulting value. The bytes are
+    /// read in big-endian order.
+    /// </remarks>
+    /// <returns>The 16-bit unsigned short (ushort) value read from the stream.</returns>
+    public ushort ReadUShort() {
+        var buffer = new byte[2];
+        _ = this.stream.Read(buffer, 0, 2);
+        return (ushort)((buffer[0] << 8) | buffer[1]);
+    }
+
     protected virtual void Dispose(bool disposing) {
         if (!this.disposed) {
             if (disposing) {
