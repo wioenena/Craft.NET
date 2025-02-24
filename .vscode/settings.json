@@ -10,7 +10,7 @@
   "[json][jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "git.confirmSync": true,
+  "git.confirmSync": false,
   "vim.disableExtension": true,
   "editor.wordWrap": "off"
 }
