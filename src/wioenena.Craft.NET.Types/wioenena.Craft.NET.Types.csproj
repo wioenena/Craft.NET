@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wioenena.Craft.NET.IO\wioenena.Craft.NET.IO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Packet\Server\" />
+  </ItemGroup>
+
 </Project>
