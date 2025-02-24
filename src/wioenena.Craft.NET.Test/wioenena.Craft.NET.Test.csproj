@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wioenena.Craft.NET.Server\wioenena.Craft.NET.Server.csproj" />
+  </ItemGroup>
+
 </Project>

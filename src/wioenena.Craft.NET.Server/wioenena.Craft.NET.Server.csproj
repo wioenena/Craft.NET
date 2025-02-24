@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wioenena.Craft.NET.IO\wioenena.Craft.NET.IO.csproj" />
+    <ProjectReference Include="..\wioenena.Craft.NET.Logging\wioenena.Craft.NET.Logging.csproj" />
+    <ProjectReference Include="..\wioenena.Craft.NET.Types\wioenena.Craft.NET.Types.csproj" />
+  </ItemGroup>
+
 </Project>
