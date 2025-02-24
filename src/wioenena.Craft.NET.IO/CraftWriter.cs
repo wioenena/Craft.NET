@@ -1,4 +1,3 @@
-
 using System.Net.Sockets;
 using System.Text;
 
@@ -73,6 +72,25 @@ public class CraftWriter(NetworkStream stream) : IDisposable {
         var bytes = Encoding.UTF8.GetBytes(value);
         this.WriteVarInt(bytes.Length); // Write first the length of the string
         this.stream.Write(bytes, 0, bytes.Length);
+    }
+
+    public void WritePacket(int packetId, byte[] packetBytes) {
+        var idSize = getVarIntSize(packetId);
+        var packetLengthSize = getVarIntSize(packetBytes.Length);
+        this.WriteVarInt(idSize + packetLengthSize + packetBytes.Length);
+        this.WriteVarInt(packetId);
+        this.WriteVarInt(packetBytes.Length);
+        this.stream.Write(packetBytes, 0, packetBytes.Length);
+    }
+
+    private static int getVarIntSize(int value) {
+        var size = 0;
+        do {
+            value >>>= 7;
+            size++;
+        } while (value != 0);
+
+        return size;
     }
 
     protected virtual void Dispose(bool disposing) {
