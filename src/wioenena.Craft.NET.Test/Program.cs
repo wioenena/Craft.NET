@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Net;
+using wioenena.Craft.NET.Server;
+
+var server = new CraftServer(new(IPAddress.Loopback, 25565, 100, "A Minecraft Server"));
+
+server.Start();
